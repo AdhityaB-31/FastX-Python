@@ -1,0 +1,313 @@
+2026-09-23 13:20:43 | __main__ | INFO | FastX application starting...
+2026-09-23 13:20:43 | database.schema | INFO | Database tables created successfully.
+2026-09-23 13:20:43 | database.seed | INFO | Seeded 5 users.
+2026-09-23 13:20:43 | database.seed | INFO | Seeded 4 buses.
+2026-09-23 13:20:43 | database.seed | INFO | Seeded 8 routes.
+2026-09-23 13:20:43 | database.seed | INFO | Seeded 148 seats across 4 buses.
+2026-09-23 13:21:27 | decorators.decorators | INFO | Executing: register
+2026-09-23 13:21:27 | repositories.user_repository | INFO | Created user: adhiadhi3129@gmail.com (ID: 6, Role: USER)
+2026-09-23 13:21:27 | services.auth_service | INFO | User registered: adhiadhi3129@gmail.com (ID: 6, Role: USER)
+2026-09-23 13:21:27 | decorators.decorators | INFO | Completed: register
+2026-09-23 13:21:42 | decorators.decorators | INFO | Executing: login
+2026-09-23 13:21:42 | services.auth_service | INFO | User logged in: adhiadhi3129@gmail.com (Role: USER)
+2026-09-23 13:21:42 | decorators.decorators | INFO | Completed: login
+2026-09-23 13:31:47 | decorators.decorators | INFO | Executing: logout
+2026-09-23 13:31:47 | services.auth_service | INFO | User logged out: adhiadhi3129@gmail.com
+2026-09-23 13:31:47 | decorators.decorators | INFO | Completed: logout
+2026-09-23 13:32:00 | decorators.decorators | INFO | Executing: login
+2026-09-23 13:32:00 | services.auth_service | INFO | User logged in: admin@fastx.com (Role: ADMIN)
+2026-09-23 13:32:00 | decorators.decorators | INFO | Completed: login
+2026-09-23 13:32:02 | decorators.decorators | INFO | Executing: get_all_users
+2026-09-23 13:32:02 | decorators.decorators | INFO | Completed: get_all_users
+2026-09-23 13:32:26 | decorators.decorators | INFO | Executing: get_all_operators
+2026-09-23 13:32:26 | decorators.decorators | INFO | Completed: get_all_operators
+2026-09-23 13:32:35 | decorators.decorators | INFO | Executing: get_all_routes
+2026-09-23 13:32:35 | decorators.decorators | INFO | Completed: get_all_routes
+2026-09-23 13:32:43 | decorators.decorators | INFO | Executing: get_all_bookings
+2026-09-23 13:32:43 | decorators.decorators | INFO | Completed: get_all_bookings
+2026-09-24 08:11:45 | __main__ | INFO | FastX application starting...
+2026-09-24 08:11:45 | database.schema | INFO | Database tables created successfully.
+2026-09-24 08:11:45 | database.seed | INFO | Database already seeded. Skipping.
+2026-09-24 08:12:16 | decorators.decorators | INFO | Executing: login
+2026-09-24 08:12:16 | services.auth_service | INFO | User logged in: admin@fastx.com (Role: ADMIN)
+2026-09-24 08:12:16 | decorators.decorators | INFO | Completed: login
+2026-09-24 08:12:24 | decorators.decorators | INFO | Executing: get_all_operators
+2026-09-24 08:12:24 | decorators.decorators | INFO | Completed: get_all_operators
+2026-09-24 08:12:37 | __main__ | INFO | Application interrupted by user.
+2026-09-24 08:12:37 | __main__ | INFO | FastX application stopped.
+2026-09-24 08:19:20 | __main__ | INFO | FastX application starting...
+2026-09-24 08:19:20 | database.schema | INFO | Database tables created successfully.
+2026-09-24 08:19:20 | database.seed | INFO | Database already seeded. Skipping.
+2026-09-24 08:20:23 | decorators.decorators | INFO | Executing: login
+2026-09-24 08:20:23 | services.auth_service | WARNING | Login failed - email not found: adhitya@example.com
+2026-09-24 08:20:23 | decorators.decorators | ERROR | Error in login: Invalid email or password.
+2026-09-24 08:20:40 | decorators.decorators | INFO | Executing: login
+2026-09-24 08:20:40 | services.auth_service | INFO | User logged in: adhitya@gmail.com (Role: USER)
+2026-09-24 08:20:40 | decorators.decorators | INFO | Completed: login
+2026-09-24 08:21:54 | decorators.decorators | INFO | Executing: logout
+2026-09-24 08:21:54 | services.auth_service | INFO | User logged out: adhitya@gmail.com
+2026-09-24 08:21:54 | decorators.decorators | INFO | Completed: logout
+2026-09-24 08:21:56 | __main__ | INFO | FastX application stopped.
+2026-09-24 08:24:22 | __main__ | INFO | FastX application starting...
+2026-09-24 08:24:22 | database.schema | INFO | Database tables created successfully.
+2026-09-24 08:24:22 | database.seed | INFO | Database already seeded. Skipping.
+2026-09-24 08:24:33 | decorators.decorators | INFO | Executing: login
+2026-09-24 08:24:33 | services.auth_service | INFO | User logged in: admin@fastx.com (Role: ADMIN)
+2026-09-24 08:24:33 | decorators.decorators | INFO | Completed: login
+2026-09-24 08:24:38 | decorators.decorators | INFO | Executing: get_all_routes
+2026-09-24 08:24:38 | decorators.decorators | INFO | Completed: get_all_routes
+2026-09-24 08:25:08 | __main__ | INFO | Application interrupted by user.
+2026-09-24 08:25:08 | __main__ | INFO | FastX application stopped.
+2026-09-26 13:31:31 | __main__ | INFO | FastX application starting...
+2026-09-26 13:31:31 | database.schema | INFO | Database tables created successfully.
+2026-09-26 13:31:31 | database.seed | INFO | Database already seeded. Skipping.
+2026-09-27 11:27:41 | __main__ | INFO | FastX application starting...
+2026-09-27 11:27:41 | database.schema | INFO | Database tables created successfully.
+2026-09-27 11:27:41 | database.seed | INFO | Database already seeded. Skipping.
+2026-09-27 11:27:59 | decorators.decorators | INFO | Executing: login
+2026-09-27 11:27:59 | services.auth_service | INFO | User logged in: priya@fastx.com (Role: BUS_OPERATOR)
+2026-09-27 11:27:59 | decorators.decorators | INFO | Completed: login
+2026-09-27 11:28:57 | decorators.decorators | INFO | Executing: add_bus
+2026-09-27 11:28:57 | repositories.bus_repository | INFO | Created bus: Adhitya Bus (ID: 5)
+2026-09-27 11:28:57 | services.bus_service | INFO | Added bus 'Adhitya Bus' with 40 seats.
+2026-09-27 11:28:57 | decorators.decorators | INFO | Completed: add_bus
+2026-09-27 11:29:48 | decorators.decorators | INFO | Executing: create_route
+2026-09-27 11:29:48 | repositories.route_repository | INFO | Created route: Puducherry → Chennai (ID: 9)
+2026-09-27 11:29:48 | decorators.decorators | INFO | Completed: create_route
+2026-09-27 11:30:17 | decorators.decorators | INFO | Executing: logout
+2026-09-27 11:30:17 | services.auth_service | INFO | User logged out: priya@fastx.com
+2026-09-27 11:30:17 | decorators.decorators | INFO | Completed: logout
+2026-09-27 11:30:31 | decorators.decorators | INFO | Executing: login
+2026-09-27 11:30:31 | services.auth_service | INFO | User logged in: adhitya@gmail.com (Role: USER)
+2026-09-27 11:30:31 | decorators.decorators | INFO | Completed: login
+2026-09-27 11:31:51 | decorators.decorators | INFO | Executing: book_ticket
+2026-09-27 11:31:51 | repositories.booking_repository | INFO | Created booking ID: 1 for user ID: 4
+2026-09-27 11:31:51 | repositories.booking_repository | INFO | Added 2 seats to booking ID: 1
+2026-09-27 11:31:51 | decorators.decorators | INFO | Executing: process_booking_payment
+2026-09-27 11:31:51 | models.payment | INFO | Transaction logged: TXN-73C0F42462 | Amount: Rs. 1300.00 | Status: SUCCESS
+2026-09-27 11:31:51 | repositories.payment_repository | INFO | Created payment: TXN-73C0F42462 (ID: 1, Booking: 1)
+2026-09-27 11:31:51 | services.payment_service | INFO | Dummy payment successful: TXN-73C0F42462 for booking 1
+2026-09-27 11:31:51 | decorators.decorators | INFO | Completed: process_booking_payment
+2026-09-27 11:31:51 | services.booking_service | INFO | Booking confirmed: FXB10001 - 2 seats - Rs. 1300.00
+2026-09-27 11:31:51 | decorators.decorators | INFO | Completed: book_ticket
+2026-09-27 11:32:16 | decorators.decorators | INFO | Executing: search_routes
+2026-09-27 11:32:16 | decorators.decorators | INFO | Completed: search_routes
+2026-09-27 11:35:22 | __main__ | INFO | Application interrupted by user.
+2026-09-27 11:35:22 | __main__ | INFO | FastX application stopped.
+2026-09-27 11:49:24 | __main__ | INFO | FastX application starting...
+2026-09-27 11:49:24 | database.schema | INFO | Database tables created successfully.
+2026-09-27 11:49:24 | database.seed | INFO | Database already seeded. Skipping.
+2026-09-27 11:49:34 | decorators.decorators | INFO | Executing: login
+2026-09-27 11:49:34 | services.auth_service | INFO | User logged in: adhitya@gmail.com (Role: USER)
+2026-09-27 11:49:34 | decorators.decorators | INFO | Completed: login
+2026-09-27 11:49:37 | decorators.decorators | INFO | Executing: get_booking_history
+2026-09-27 11:49:37 | decorators.decorators | INFO | Completed: get_booking_history
+2026-09-27 11:50:00 | decorators.decorators | INFO | Executing: search_routes
+2026-09-27 11:50:00 | decorators.decorators | INFO | Completed: search_routes
+2026-09-27 11:51:42 | __main__ | INFO | Application interrupted by user.
+2026-09-27 11:51:42 | __main__ | INFO | FastX application stopped.
+2026-09-27 11:51:44 | __main__ | INFO | FastX application starting...
+2026-09-27 11:51:44 | database.schema | INFO | Database tables created successfully.
+2026-09-27 11:51:44 | database.seed | INFO | Database already seeded. Skipping.
+2026-09-27 11:51:56 | decorators.decorators | INFO | Executing: login
+2026-09-27 11:51:56 | services.auth_service | INFO | User logged in: adhitya@gmail.com (Role: USER)
+2026-09-27 11:51:56 | decorators.decorators | INFO | Completed: login
+2026-09-27 11:56:05 | __main__ | INFO | Application interrupted by user.
+2026-09-27 11:56:05 | __main__ | INFO | FastX application stopped.
+2026-09-27 11:56:07 | __main__ | INFO | FastX application starting...
+2026-09-27 11:56:07 | database.schema | INFO | Database tables created successfully.
+2026-09-27 11:56:07 | database.seed | INFO | Database already seeded. Skipping.
+2026-09-27 11:56:14 | decorators.decorators | INFO | Executing: login
+2026-09-27 11:56:14 | services.auth_service | INFO | User logged in: adhitya@gmail.com (Role: USER)
+2026-09-27 11:56:14 | decorators.decorators | INFO | Completed: login
+2026-09-27 12:00:02 | __main__ | INFO | Application interrupted by user.
+2026-09-27 12:00:02 | __main__ | INFO | FastX application stopped.
+2026-09-27 12:00:03 | __main__ | INFO | FastX application starting...
+2026-09-27 12:00:03 | database.schema | INFO | Database tables created successfully.
+2026-09-27 12:00:03 | database.seed | INFO | Database already seeded. Skipping.
+2026-09-27 12:00:12 | decorators.decorators | INFO | Executing: login
+2026-09-27 12:00:12 | services.auth_service | INFO | User logged in: adhitya@gmail.com (Role: USER)
+2026-09-27 12:00:12 | decorators.decorators | INFO | Completed: login
+2026-09-27 12:03:04 | __main__ | INFO | Application interrupted by user.
+2026-09-27 12:03:04 | __main__ | INFO | FastX application stopped.
+2026-09-27 12:03:07 | __main__ | INFO | FastX application starting...
+2026-09-27 12:03:07 | database.schema | INFO | Database tables created successfully.
+2026-09-27 12:03:07 | database.seed | INFO | Database already seeded. Skipping.
+2026-09-27 12:03:18 | decorators.decorators | INFO | Executing: login
+2026-09-27 12:03:18 | services.auth_service | INFO | User logged in: adhitya@gmail.com (Role: USER)
+2026-09-27 12:03:18 | decorators.decorators | INFO | Completed: login
+2026-09-27 12:05:25 | __main__ | INFO | Application interrupted by user.
+2026-09-27 12:05:25 | __main__ | INFO | FastX application stopped.
+2026-09-27 12:05:26 | __main__ | INFO | FastX application starting...
+2026-09-27 12:05:26 | database.schema | INFO | Database tables created successfully.
+2026-09-27 12:05:26 | database.seed | INFO | Database already seeded. Skipping.
+2026-09-27 12:05:35 | decorators.decorators | INFO | Executing: login
+2026-09-27 12:05:35 | services.auth_service | INFO | User logged in: adhitya@gmail.com (Role: USER)
+2026-09-27 12:05:35 | decorators.decorators | INFO | Completed: login
+2026-09-27 12:06:26 | __main__ | INFO | Application interrupted by user.
+2026-09-27 12:06:26 | __main__ | INFO | FastX application stopped.
+2026-09-27 12:06:27 | __main__ | INFO | FastX application starting...
+2026-09-27 12:06:27 | database.schema | INFO | Database tables created successfully.
+2026-09-27 12:06:28 | database.seed | INFO | Database already seeded. Skipping.
+2026-09-27 12:06:35 | decorators.decorators | INFO | Executing: login
+2026-09-27 12:06:35 | services.auth_service | INFO | User logged in: adhitya@gmail.com (Role: USER)
+2026-09-27 12:06:35 | decorators.decorators | INFO | Completed: login
+2026-09-27 12:07:25 | __main__ | INFO | Application interrupted by user.
+2026-09-27 12:07:25 | __main__ | INFO | FastX application stopped.
+2026-09-27 12:07:27 | __main__ | INFO | FastX application starting...
+2026-09-27 12:07:27 | database.schema | INFO | Database tables created successfully.
+2026-09-27 12:07:27 | database.seed | INFO | Database already seeded. Skipping.
+2026-09-27 12:07:35 | decorators.decorators | INFO | Executing: login
+2026-09-27 12:07:35 | services.auth_service | INFO | User logged in: adhitya@gmail.com (Role: USER)
+2026-09-27 12:07:35 | decorators.decorators | INFO | Completed: login
+2026-09-27 12:07:52 | __main__ | INFO | Application interrupted by user.
+2026-09-27 12:07:52 | __main__ | INFO | FastX application stopped.
+2026-09-27 14:01:58 | __main__ | INFO | FastX application starting...
+2026-09-27 14:01:58 | database.schema | INFO | Database tables created successfully.
+2026-09-27 14:01:58 | database.seed | INFO | Database already seeded. Skipping.
+2026-09-27 14:04:30 | decorators.decorators | INFO | Executing: login
+2026-09-27 14:04:30 | services.auth_service | INFO | User logged in: admin@fastx.com (Role: ADMIN)
+2026-09-27 14:04:30 | decorators.decorators | INFO | Completed: login
+2026-09-27 14:04:34 | decorators.decorators | INFO | Executing: get_all_operators
+2026-09-27 14:04:34 | decorators.decorators | INFO | Completed: get_all_operators
+2026-09-27 14:04:45 | decorators.decorators | INFO | Executing: get_all_operators
+2026-09-27 14:04:45 | decorators.decorators | INFO | Completed: get_all_operators
+2026-09-27 14:04:55 | decorators.decorators | INFO | Executing: get_all_operators
+2026-09-27 14:04:55 | decorators.decorators | INFO | Completed: get_all_operators
+2026-09-27 14:15:30 | __main__ | INFO | Application interrupted by user.
+2026-09-27 14:15:30 | __main__ | INFO | FastX application stopped.
+2026-09-27 14:15:31 | __main__ | INFO | FastX application starting...
+2026-09-27 14:15:31 | database.schema | INFO | Database tables created successfully.
+2026-09-27 14:15:31 | database.seed | INFO | Database already seeded. Skipping.
+2026-09-27 14:16:03 | decorators.decorators | INFO | Executing: register
+2026-09-27 14:16:03 | repositories.user_repository | INFO | Created user: adhiadhi3129@gmail.com (ID: 6, Role: USER, Active: True)
+2026-09-27 14:16:03 | services.auth_service | INFO | User registered: adhiadhi3129@gmail.com (ID: 6, Role: USER, Active: True)
+2026-09-27 14:16:03 | decorators.decorators | INFO | Completed: register
+2026-09-27 18:27:40 | __main__ | INFO | FastX application starting...
+2026-09-27 18:27:40 | database.schema | INFO | Database tables created successfully.
+2026-09-27 18:27:41 | database.seed | INFO | Database already seeded. Skipping.
+2026-09-27 18:31:19 | decorators.decorators | INFO | Executing: login
+2026-09-27 18:31:19 | services.auth_service | WARNING | Login failed - wrong password for: adhiadhi3129@gmail.com
+2026-09-27 18:31:19 | decorators.decorators | ERROR | Error in login: Invalid email or password.
+2026-09-27 18:31:34 | decorators.decorators | INFO | Executing: login
+2026-09-27 18:31:34 | services.auth_service | WARNING | Login failed - email not found: admin@gmail.com
+2026-09-27 18:31:34 | decorators.decorators | ERROR | Error in login: Invalid email or password.
+2026-09-27 18:32:00 | decorators.decorators | INFO | Executing: login
+2026-09-27 18:32:01 | services.auth_service | INFO | User logged in: adhiadhi3129@gmail.com (Role: USER)
+2026-09-27 18:32:01 | decorators.decorators | INFO | Completed: login
+2026-09-27 18:35:14 | __main__ | INFO | Application interrupted by user.
+2026-09-27 18:35:14 | __main__ | INFO | FastX application stopped.
+2026-09-27 18:35:24 | __main__ | INFO | FastX application starting...
+2026-09-27 18:35:24 | database.schema | INFO | Database tables created successfully.
+2026-09-27 18:35:25 | database.seed | INFO | Database already seeded. Skipping.
+2026-09-27 18:35:41 | decorators.decorators | INFO | Executing: login
+2026-09-27 18:35:41 | services.auth_service | INFO | User logged in: adhitya@gmail.com (Role: USER)
+2026-09-27 18:35:41 | decorators.decorators | INFO | Completed: login
+2026-09-27 18:36:04 | decorators.decorators | INFO | Executing: get_booking_history
+2026-09-27 18:36:05 | decorators.decorators | INFO | Completed: get_booking_history
+2026-09-27 18:36:35 | decorators.decorators | INFO | Executing: cancel_booking
+2026-09-27 18:36:36 | repositories.booking_repository | INFO | Updated booking ID 1 status to: CANCELLED
+2026-09-27 18:36:36 | repositories.booking_repository | INFO | Released 2 seats for booking ID: 1
+2026-09-27 18:36:36 | services.booking_service | INFO | Booking 1 cancelled by user 4
+2026-09-27 18:36:36 | decorators.decorators | INFO | Completed: cancel_booking
+2026-09-27 18:37:44 | decorators.decorators | INFO | Executing: request_refund
+2026-09-27 18:37:45 | decorators.decorators | INFO | Executing: process_refund
+2026-09-27 18:37:45 | models.payment | INFO | Refund processed: Rs. 1300.00
+2026-09-27 18:37:45 | repositories.payment_repository | INFO | Refund updated for booking ID 1: Rs. 1300.00 (REFUNDED)
+2026-09-27 18:37:45 | services.payment_service | INFO | Refund processed: Rs. 1300.00 for booking 1
+2026-09-27 18:37:45 | decorators.decorators | INFO | Completed: process_refund
+2026-09-27 18:37:45 | repositories.booking_repository | INFO | Updated booking ID 1 status to: REFUNDED
+2026-09-27 18:37:45 | decorators.decorators | INFO | Completed: request_refund
+2026-09-27 18:42:52 | __main__ | INFO | Application interrupted by user.
+2026-09-27 18:42:52 | __main__ | INFO | FastX application stopped.
+2026-09-27 18:52:27 | __main__ | INFO | FastX application starting...
+2026-09-27 18:52:27 | database.schema | INFO | Database tables created successfully.
+2026-09-27 18:52:27 | database.seed | INFO | Database already seeded. Skipping.
+2026-09-27 18:53:00 | __main__ | INFO | Application interrupted by user.
+2026-09-27 18:53:00 | __main__ | INFO | FastX application stopped.
+2026-09-27 18:53:00 | __main__ | INFO | FastX application starting...
+2026-09-27 18:53:01 | database.schema | INFO | Database tables created successfully.
+2026-09-27 18:53:01 | database.seed | INFO | Database already seeded. Skipping.
+2026-09-27 18:53:10 | decorators.decorators | INFO | Executing: login
+2026-09-27 18:53:11 | services.auth_service | INFO | User logged in: adhiadhi3129@gmail.com (Role: USER)
+2026-09-27 18:53:11 | decorators.decorators | INFO | Completed: login
+2026-09-27 18:53:37 | __main__ | INFO | Application interrupted by user.
+2026-09-27 18:53:37 | __main__ | INFO | FastX application stopped.
+2026-09-27 18:54:35 | __main__ | INFO | FastX application starting...
+2026-09-27 18:54:36 | database.schema | INFO | Database tables created successfully.
+2026-09-27 18:54:36 | database.seed | INFO | Database already seeded. Skipping.
+2026-09-27 18:54:48 | decorators.decorators | INFO | Executing: login
+2026-09-27 18:54:48 | services.auth_service | INFO | User logged in: adhiadhi3129@gmail.com (Role: USER)
+2026-09-27 18:54:48 | decorators.decorators | INFO | Completed: login
+2026-09-27 18:55:10 | decorators.decorators | INFO | Executing: update_user_profile
+2026-09-27 18:55:10 | repositories.user_repository | INFO | Updated user ID 6: ['gender']
+2026-09-27 18:55:10 | services.auth_service | INFO | Updated profile for user ID 6: ['gender']
+2026-09-27 18:55:10 | decorators.decorators | INFO | Completed: update_user_profile
+2026-09-27 18:55:40 | decorators.decorators | INFO | Executing: logout
+2026-09-27 18:55:40 | services.auth_service | INFO | User logged out: adhiadhi3129@gmail.com
+2026-09-27 18:55:40 | decorators.decorators | INFO | Completed: logout
+2026-09-27 18:55:54 | decorators.decorators | INFO | Executing: login
+2026-09-27 18:55:54 | services.auth_service | INFO | User logged in: priya@fastx.com (Role: BUS_OPERATOR)
+2026-09-27 18:55:54 | decorators.decorators | INFO | Completed: login
+2026-09-27 18:57:08 | decorators.decorators | INFO | Executing: update_user_profile
+2026-09-27 18:57:08 | repositories.user_repository | INFO | Updated user ID 3: ['phone']
+2026-09-27 18:57:08 | services.auth_service | INFO | Updated profile for user ID 3: ['phone']
+2026-09-27 18:57:09 | decorators.decorators | INFO | Completed: update_user_profile
+2026-09-27 18:57:19 | decorators.decorators | INFO | Executing: logout
+2026-09-27 18:57:19 | services.auth_service | INFO | User logged out: priya@fastx.com
+2026-09-27 18:57:19 | decorators.decorators | INFO | Completed: logout
+2026-09-27 18:57:27 | decorators.decorators | INFO | Executing: login
+2026-09-27 18:57:28 | services.auth_service | INFO | User logged in: admin@fastx.com (Role: ADMIN)
+2026-09-27 18:57:28 | decorators.decorators | INFO | Completed: login
+2026-09-27 18:57:32 | decorators.decorators | INFO | Executing: get_all_operators
+2026-09-27 18:57:33 | decorators.decorators | INFO | Completed: get_all_operators
+2026-09-27 18:57:45 | decorators.decorators | INFO | Executing: get_all_routes
+2026-09-27 18:57:45 | decorators.decorators | INFO | Completed: get_all_routes
+2026-09-27 18:58:17 | decorators.decorators | INFO | Executing: get_all_bookings
+2026-09-27 18:58:17 | decorators.decorators | INFO | Completed: get_all_bookings
+2026-09-27 19:03:08 | decorators.decorators | INFO | Executing: logout
+2026-09-27 19:03:08 | services.auth_service | INFO | User logged out: admin@fastx.com
+2026-09-27 19:03:08 | decorators.decorators | INFO | Completed: logout
+2026-09-27 19:03:29 | decorators.decorators | INFO | Executing: login
+2026-09-27 19:03:29 | services.auth_service | INFO | User logged in: rajesh@fastx.com (Role: BUS_OPERATOR)
+2026-09-27 19:03:29 | decorators.decorators | INFO | Completed: login
+2026-09-27 19:04:01 | decorators.decorators | INFO | Executing: logout
+2026-09-27 19:04:01 | services.auth_service | INFO | User logged out: rajesh@fastx.com
+2026-09-27 19:04:01 | decorators.decorators | INFO | Completed: logout
+2026-09-27 19:10:22 | __main__ | INFO | FastX application starting...
+2026-09-27 19:10:22 | database.schema | INFO | Database tables created successfully.
+2026-09-27 19:10:22 | database.seed | INFO | Database already seeded. Skipping.
+2026-09-27 19:10:34 | decorators.decorators | INFO | Executing: login
+2026-09-27 19:10:34 | services.auth_service | INFO | User logged in: admin@fastx.com (Role: ADMIN)
+2026-09-27 19:10:34 | decorators.decorators | INFO | Completed: login
+2026-09-27 19:10:38 | decorators.decorators | INFO | Executing: get_all_bookings
+2026-09-27 19:10:38 | decorators.decorators | INFO | Completed: get_all_bookings
+2026-09-27 19:10:59 | decorators.decorators | INFO | Executing: logout
+2026-09-27 19:10:59 | services.auth_service | INFO | User logged out: admin@fastx.com
+2026-09-27 19:10:59 | decorators.decorators | INFO | Completed: logout
+2026-09-27 19:11:15 | decorators.decorators | INFO | Executing: login
+2026-09-27 19:11:15 | services.auth_service | INFO | User logged in: rajesh@fastx.com (Role: BUS_OPERATOR)
+2026-09-27 19:11:15 | decorators.decorators | INFO | Completed: login
+2026-09-27 19:11:49 | decorators.decorators | INFO | Executing: logout
+2026-09-27 19:11:49 | services.auth_service | INFO | User logged out: rajesh@fastx.com
+2026-09-27 19:11:49 | decorators.decorators | INFO | Completed: logout
+2026-09-27 19:12:01 | decorators.decorators | INFO | Executing: login
+2026-09-27 19:12:01 | services.auth_service | INFO | User logged in: adhiadhi3129@gmail.com (Role: USER)
+2026-09-27 19:12:01 | decorators.decorators | INFO | Completed: login
+2026-09-27 19:33:10 | __main__ | INFO | Application interrupted by user.
+2026-09-27 19:33:10 | __main__ | INFO | FastX application stopped.
+2026-09-27 19:33:30 | __main__ | INFO | FastX application starting...
+2026-09-27 19:33:31 | database.schema | INFO | Database tables created successfully.
+2026-09-27 19:33:31 | database.seed | INFO | Seeded 5 users.
+2026-09-27 19:33:31 | database.seed | INFO | Seeded 4 buses.
+2026-09-27 19:33:31 | database.seed | INFO | Seeded 8 routes.
+2026-09-27 19:33:31 | database.seed | INFO | Seeded 148 seats across 4 buses.
+2026-09-27 19:34:23 | decorators.decorators | INFO | Executing: register
+2026-09-27 19:34:23 | repositories.user_repository | INFO | Created user: adhiadhi3129@gmail.com (ID: 6, Role: USER, Active: True)
+2026-09-27 19:34:23 | services.auth_service | INFO | User registered: adhiadhi3129@gmail.com (ID: 6, Role: USER, Active: True)
+2026-09-27 19:34:23 | decorators.decorators | INFO | Completed: register
+2026-09-27 19:34:52 | decorators.decorators | INFO | Executing: login
+2026-09-27 19:34:52 | services.auth_service | INFO | User logged in: adhiadhi3129@gmail.com (Role: USER)
+2026-09-27 19:34:52 | decorators.decorators | INFO | Completed: login
+2026-09-27 19:39:48 | decorators.decorators | INFO | Executing: search_routes
+2026-09-27 19:39:48 | decorators.decorators | INFO | Completed: search_routes
