@@ -1,13 +1,4 @@
-"""
-Payment model classes for FastX application.
-
-Demonstrates:
-- Abstraction: PaymentMethod(ABC) with @abstractmethod
-- Single Inheritance: Payment → DummyPayment
-- Multiple Inheritance: Payment + TransactionLogger → DummyPayment
-- Hybrid Inheritance: Payment + Refundable + TransactionLogger → DummyPayment
-- Method Overriding: process_payment() overridden by DummyPayment
-"""
+# Payment model classes for FastX application.
 
 import uuid
 import logging

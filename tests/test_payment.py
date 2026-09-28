@@ -1,9 +1,4 @@
-"""
-Tests for payment models and payment service.
-
-Tests dummy payment processing, transaction ID generation,
-refund, and inheritance-based payment classes.
-"""
+# Tests for payment models and payment service.
 
 import pytest
 

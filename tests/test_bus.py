@@ -1,8 +1,4 @@
-"""
-Tests for Bus model.
-
-Tests bus creation, properties, and constructor defaults.
-"""
+# Tests for Bus model.
 
 import pytest
 

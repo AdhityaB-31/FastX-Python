@@ -1,39 +1,12 @@
-"""
-Route model class for FastX application.
-
-Represents a bus route with origin, destination, journey date,
-departure and arrival times, and fare information.
-"""
+# Route model class for FastX application.
 
 
 class Route:
-    """Represents a bus route in the FastX system.
-
-    Attributes:
-        _route_id (int): The route's database ID.
-        _bus_id (int): The associated bus ID.
-        _origin (str): The departure city.
-        _destination (str): The arrival city.
-        _journey_date (str): The journey date (YYYY-MM-DD).
-        _departure_time (str): The departure time.
-        _arrival_time (str): The arrival time.
-        _fare (float): The fare per seat.
-    """
+    """Represents a bus route in the FastX system."""
 
     def __init__(self, bus_id, origin, destination, journey_date,
                  departure_time, arrival_time, fare=0.0, route_id=None):
-        """Initialize a Route instance.
-
-        Args:
-            bus_id: The associated bus ID.
-            origin: The departure city.
-            destination: The arrival city.
-            journey_date: The journey date (YYYY-MM-DD).
-            departure_time: The departure time.
-            arrival_time: The arrival time.
-            fare: The fare per seat. Defaults to 0.0.
-            route_id: The route's database ID.
-        """
+        """Initialize a Route instance."""
         self._route_id = route_id
         self._bus_id = bus_id
         self._origin = origin
@@ -115,14 +88,7 @@ class Route:
 
     @fare.setter
     def fare(self, value):
-        """Set the fare per seat.
-
-        Args:
-            value: The new fare value.
-
-        Raises:
-            ValueError: If fare is negative.
-        """
+        """Set the fare per seat."""
         if value < 0:
             raise ValueError("Fare cannot be negative.")
         self._fare = value

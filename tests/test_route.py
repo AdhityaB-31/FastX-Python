@@ -1,9 +1,4 @@
-"""
-Tests for Route model and route service.
-
-Tests route creation, searching with **kwargs,
-sorting with lambda, and route CRUD operations.
-"""
+# Tests for Route model and route service.
 
 import pytest
 

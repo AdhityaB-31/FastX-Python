@@ -1,24 +1,8 @@
-"""
-Booking model and generator functions for FastX application.
-
-Demonstrates:
-- Generator function: booking_generator()
-- Generator expression: for computing totals
-- Constructor with default values
-"""
+# Booking model class and generator functions for FastX application.
 
 
 class Booking:
-    """Represents a ticket booking in the FastX system.
-
-    Attributes:
-        _booking_id (int): The booking's database ID.
-        _user_id (int): The user who made the booking.
-        _route_id (int): The booked route ID.
-        _booking_date (str): The date the booking was made.
-        _total_amount (float): The total booking amount.
-        _status (str): The booking status.
-    """
+    """Represents a ticket booking in the FastX system."""
 
     # Booking status constants
     CONFIRMED = "CONFIRMED"
@@ -28,16 +12,7 @@ class Booking:
 
     def __init__(self, user_id, route_id, booking_date, total_amount=0.0,
                  status="CONFIRMED", booking_id=None):
-        """Initialize a Booking instance.
-
-        Args:
-            user_id: The user who made the booking.
-            route_id: The booked route ID.
-            booking_date: The date the booking was made.
-            total_amount: The total booking amount. Defaults to 0.0.
-            status: The booking status. Defaults to 'CONFIRMED'.
-            booking_id: The booking's database ID.
-        """
+        """Initialize a Booking instance."""
         self._booking_id = booking_id
         self._user_id = user_id
         self._route_id = route_id
@@ -104,11 +79,7 @@ class Booking:
         self._status = value
 
     def is_cancellable(self):
-        """Check if the booking can be cancelled.
-
-        Returns:
-            bool: True if the booking status is CONFIRMED.
-        """
+        """Check if the booking can be cancelled."""
         return self._status == self.CONFIRMED
 
     def __str__(self):

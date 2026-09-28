@@ -1,9 +1,4 @@
-"""
-Tests for User model and authentication.
-
-Tests user model creation, encapsulation (properties),
-and registration/login flows.
-"""
+# Tests for User model and authentication.
 
 import pytest
 

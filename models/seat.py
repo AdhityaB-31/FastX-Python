@@ -1,10 +1,4 @@
-"""
-Seat model and SeatIterator for FastX application.
-
-Demonstrates:
-- Custom Iterator: SeatIterator with __iter__ and __next__
-- Constructor with default values
-"""
+# Seat model class and SeatIterator for FastX application.
 
 
 class Seat:
@@ -67,25 +61,14 @@ class Seat:
 
     @status.setter
     def status(self, value):
-        """Set the seat status.
-
-        Args:
-            value: The new status ('AVAILABLE' or 'BOOKED').
-
-        Raises:
-            ValueError: If status is not valid.
-        """
+        """Set the seat status."""
         valid_statuses = ['AVAILABLE', 'BOOKED']
         if value not in valid_statuses:
             raise ValueError(f"Invalid status. Must be one of: {valid_statuses}")
         self._status = value
 
     def is_available(self):
-        """Check if the seat is available for booking.
-
-        Returns:
-            bool: True if the seat is available.
-        """
+        """Check if the seat is available for booking."""
         return self._status == "AVAILABLE"
 
     def __str__(self):

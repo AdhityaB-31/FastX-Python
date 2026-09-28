@@ -1,9 +1,4 @@
-"""
-Tests for booking service.
-
-Tests ticket booking, fare calculation, cancellation,
-seat validation, and generator/collection usage.
-"""
+# Tests for booking service and fare calculation.
 
 import pytest
 
