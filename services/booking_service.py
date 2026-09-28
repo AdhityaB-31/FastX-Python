@@ -28,8 +28,16 @@ def calculate_fare(fare, seats=1):
 
 
 @log_action
-def book_ticket(current_user, route_id, seat_numbers):
-    """Book tickets for specified seats on a route."""
+def book_ticket(current_user, route_id, seat_numbers, journey_date=None):
+    """Book tickets for specified seats on a route.
+
+    Args:
+        current_user: The user performing the booking.
+        route_id: Database ID of the route.
+        seat_numbers: List of seat numbers to book.
+        journey_date: Optional custom journey date string (YYYY-MM-DD).
+                      If None, defaults to the route's journey_date.
+    """
     if not seat_numbers:
         raise InvalidInputError("Please select at least one seat.")
 
@@ -38,8 +46,9 @@ def book_ticket(current_user, route_id, seat_numbers):
         raise InvalidInputError(f"Route {route_id} not found.")
 
     bus_id = route['bus_id']
+    actual_journey_date = journey_date if journey_date else route['journey_date']
 
-    seats = bus_service.find_seats_by_numbers(bus_id, seat_numbers)
+    seats = bus_service.find_seats_by_numbers(bus_id, seat_numbers, journey_date=actual_journey_date)
 
     if len(seats) != len(seat_numbers):
         found_numbers = {s['seat_number'] for s in seats}
@@ -65,7 +74,8 @@ def book_ticket(current_user, route_id, seat_numbers):
         route_id=route_id,
         booking_date=booking_date,
         total_amount=total_amount,
-        status="CONFIRMED"
+        status="CONFIRMED",
+        journey_date=actual_journey_date
     )
 
     seat_ids = [seat['id'] for seat in seats]
@@ -84,7 +94,7 @@ def book_ticket(current_user, route_id, seat_numbers):
         "operator_name": route.get('operator_name', 'N/A'),
         "origin": route['origin'],
         "destination": route['destination'],
-        "journey_date": route['journey_date'],
+        "journey_date": actual_journey_date,
         "departure_time": route['departure_time'],
         "seats": ", ".join(seat_numbers),
         "fare_per_seat": fare_per_seat,

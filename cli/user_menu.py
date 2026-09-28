@@ -1,5 +1,5 @@
 # User menu module for FastX application console interface.
-
+from exceptions import InvalidJourneyDateError
 from services import auth_service, route_service, bus_service, booking_service
 from utils.helpers import (
     print_header, print_menu, print_field, print_separator,
@@ -83,8 +83,7 @@ def handle_search_bus(current_user=None):
     db_date = None
     if journey_date:
         if not validate_future_date(journey_date):
-            print("\n  Invalid or past date. Please enter a valid future date or leave empty for all dates.\n")
-            return
+           raise InvalidJourneyDateError("\n  Invalid or past date. Please enter a valid future date or leave empty for all dates.\n")
         from utils.helpers import parse_date_input
         db_date = parse_date_input(journey_date)
 
@@ -119,7 +118,8 @@ def handle_search_bus(current_user=None):
         print_field("  Fare", format_currency(route['fare']))
 
         # Get available seat count
-        available = bus_service.get_available_seats(route['bus_id'])
+        r_date = route['journey_date'] if not route.get('is_routine') else db_date
+        available = bus_service.get_available_seats(route['bus_id'], journey_date=r_date)
         print_field("  Available Seats", len(available))
 
         amenities = route.get('amenities', '')
@@ -135,9 +135,9 @@ def handle_search_bus(current_user=None):
 
     choice = input("\n  Enter choice (1/0 or press 0 to enter menu): ").strip()
     if choice == "1":
-        handle_book_ticket(current_user)
+        handle_book_ticket(current_user, default_journey_date=db_date)
     elif choice.isdigit() and int(choice) > 0:
-        handle_book_ticket(current_user, route_id=int(choice))
+        handle_book_ticket(current_user, route_id=int(choice), default_journey_date=db_date)
 
 
 def handle_view_routes(current_user=None):
@@ -201,8 +201,19 @@ def handle_select_seats(current_user=None):
     print(f"  Route: {route['origin']} → {route['destination']}")
     print(f"  Fare: {format_currency(route['fare'])}")
 
+    s_date = route['journey_date']
+    if route.get('is_routine'):
+        print("  Schedule: Daily (Routine Bus)")
+        d_inp = input("  Enter journey date (DD-MM-YYYY, or press Enter for today): ").strip()
+        if d_inp and validate_future_date(d_inp):
+            from utils.helpers import parse_date_input
+            s_date = parse_date_input(d_inp)
+        else:
+            from utils.helpers import get_current_date
+            s_date = get_current_date()
+
     # Display seats using SeatIterator
-    bus_service.display_seats_with_iterator(route['bus_id'])
+    bus_service.display_seats_with_iterator(route['bus_id'], journey_date=s_date)
 
     print_separator()
     print()
@@ -216,12 +227,13 @@ def handle_select_seats(current_user=None):
         handle_book_ticket(current_user, route_id=route_id)
 
 
-def handle_book_ticket(current_user=None, route_id=None):
+def handle_book_ticket(current_user=None, route_id=None, default_journey_date=None):
     """Handle the full ticket booking flow.
 
     Args:
         current_user: The current user session dictionary.
         route_id: Optional pre-selected route ID.
+        default_journey_date: Optional default journey date (YYYY-MM-DD format).
     """
     print_header("BOOK TICKET")
 
@@ -245,11 +257,38 @@ def handle_book_ticket(current_user=None, route_id=None):
     print(f"\n  Bus: {route['bus_name']} ({route['bus_number']})")
     print(f"  Operator: {route.get('operator_name', 'N/A')}")
     print(f"  Route: {route['origin']} → {route['destination']}")
-    print(f"  Date: {format_date(route['journey_date'])}")
+
+    selected_journey_date = None
+    if route.get('is_routine'):
+        print("  Schedule: Daily (Routine Bus)")
+        while True:
+            if default_journey_date:
+                prompt_msg = f"  Enter journey date (DD-MM-YYYY, press Enter to use {format_date(default_journey_date)}): "
+            else:
+                prompt_msg = "  Enter journey date (DD-MM-YYYY): "
+
+            date_input = input(prompt_msg).strip()
+            if not date_input:
+                if default_journey_date:
+                    selected_journey_date = default_journey_date
+                    break
+                else:
+                    print("  Journey date is required for daily routine buses. Please try again.")
+                    continue
+            if not validate_future_date(date_input):
+                print("  Invalid or past date. Please enter a valid future date (DD-MM-YYYY).")
+                continue
+            from utils.helpers import parse_date_input
+            selected_journey_date = parse_date_input(date_input)
+            break
+    else:
+        selected_journey_date = route['journey_date']
+        print(f"  Date: {format_date(selected_journey_date)}")
+
     print(f"  Fare per seat: {format_currency(route['fare'])}")
 
     # Display seats
-    bus_service.display_seats_with_iterator(route['bus_id'])
+    bus_service.display_seats_with_iterator(route['bus_id'], journey_date=selected_journey_date)
 
     # Get seat selection
     seats_input = input("  Enter seats (comma-separated, e.g., A1,A3,B2): ").strip()
@@ -265,7 +304,7 @@ def handle_book_ticket(current_user=None, route_id=None):
 
     # Check for invalid or booked seats before proceeding
     try:
-        found_seats = bus_service.find_seats_by_numbers(route['bus_id'], seat_numbers)
+        found_seats = bus_service.find_seats_by_numbers(route['bus_id'], seat_numbers, journey_date=selected_journey_date)
         found_map = {s['seat_number']: s for s in found_seats}
 
         missing = [sn for sn in seat_numbers if sn not in found_map]
@@ -302,7 +341,7 @@ def handle_book_ticket(current_user=None, route_id=None):
         print("\n  Processing payment...\n")
 
         confirmation = booking_service.book_ticket(
-            current_user, route_id, seat_numbers
+            current_user, route_id, seat_numbers, journey_date=selected_journey_date
         )
 
         # Booking confirmation

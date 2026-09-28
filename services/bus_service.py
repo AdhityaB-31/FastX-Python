@@ -40,24 +40,24 @@ def get_operator_buses(operator_id):
     return bus_repository.find_by_operator(operator_id)
 
 
-def get_available_seats(bus_id):
-    """Get all available seats for a bus."""
-    return seat_repository.get_available_seats(bus_id)
+def get_available_seats(bus_id, journey_date=None):
+    """Get all available seats for a bus on a specific journey date."""
+    return seat_repository.get_available_seats(bus_id, journey_date)
 
 
-def get_booked_seats(bus_id):
-    """Get all booked seats for a bus."""
-    return seat_repository.get_booked_seats(bus_id)
+def get_booked_seats(bus_id, journey_date=None):
+    """Get all booked seats for a bus on a specific journey date."""
+    return seat_repository.get_booked_seats(bus_id, journey_date)
 
 
-def get_all_seats(bus_id):
-    """Get all seats for a bus."""
-    return seat_repository.get_all_seats(bus_id)
+def get_all_seats(bus_id, journey_date=None):
+    """Get all seats for a bus on a specific journey date."""
+    return seat_repository.get_all_seats(bus_id, journey_date)
 
 
-def display_seats_with_iterator(bus_id):
-    """Display seat layout using SeatIterator."""
-    all_seats = get_all_seats(bus_id)
+def display_seats_with_iterator(bus_id, journey_date=None):
+    """Display seat layout using SeatIterator for a specific journey date."""
+    all_seats = get_all_seats(bus_id, journey_date)
     if not all_seats:
         print("\n  No seats found for this bus.\n")
         return
@@ -92,9 +92,9 @@ def display_seats_with_iterator(bus_id):
     print(f"{summary_text:^65}\n")
 
 
-def find_seats_by_numbers(bus_id, seat_numbers):
-    """Find seat records by seat numbers for a bus."""
-    return seat_repository.find_seats_by_numbers(bus_id, seat_numbers)
+def find_seats_by_numbers(bus_id, seat_numbers, journey_date=None):
+    """Find seat records by seat numbers for a bus on a specific journey date."""
+    return seat_repository.find_seats_by_numbers(bus_id, seat_numbers, journey_date)
 
 
 def update_seat_status(seat_id, status):

@@ -31,17 +31,17 @@ def seed_database():
                  "FastX HQ, Chennai", hash_password("admin123"), "ADMIN", True, now),
 
                 # Bus Operators
-                ("Rajesh Kumar", "Male", "rajesh@fastx.com", "9000000002",
+                ("ABS Travels", "Male", "abstravels@fastx.com", "9000000002",
                  "Anna Nagar, Chennai", hash_password("operator123"), "BUS_OPERATOR", True, now),
 
                 ("Priya Transport", "Female", "priya@fastx.com", "9000000003",
                  "MG Road, Puducherry", hash_password("operator123"), "BUS_OPERATOR", True, now),
 
                 # Regular Users
-                ("Adhitya", "Male", "adhitya@gmail.com", "9876543210",
-                 "Puducherry", hash_password("user123"), "USER", True, now),
+                ("Adhitya", "Male", "adhiadhi3129@gmail.com", "9876543210",
+                 "Puducherry", hash_password("Adhi@3129"), "USER", True, now),
 
-                ("Sneha", "Female", "sneha@gmail.com", "9876543211",
+                ("Sneha", "Female", "harini@gmail.com", "9876543211",
                  "Chennai", hash_password("user123"), "USER", True, now),
             ]
 
@@ -56,7 +56,7 @@ def seed_database():
             # ---- Seed Buses ----
 
             buses = [
-                # Operator 1 (Rajesh Kumar, user_id=2)
+                # Operator 1 (ABS Travels, user_id=2)
                 ("FastX Express", "TN01AB1234", "Sleeper AC", 40,
                  "Water Bottle,Charging Point,TV,Blanket", 2, True),  # Routine bus (Daily)
 

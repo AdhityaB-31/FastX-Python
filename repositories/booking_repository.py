@@ -7,13 +7,13 @@ from database.connection import DatabaseManager
 logger = logging.getLogger(__name__)
 
 
-def create_booking(user_id, route_id, booking_date, total_amount, status="CONFIRMED"):
+def create_booking(user_id, route_id, booking_date, total_amount, status="CONFIRMED", journey_date=None):
     """Create a new booking in the database."""
     with DatabaseManager() as cursor:
         cursor.execute("""
-            INSERT INTO bookings (user_id, route_id, booking_date, total_amount, status)
-            VALUES (%s, %s, %s, %s, %s)
-        """, (user_id, route_id, booking_date, total_amount, status))
+            INSERT INTO bookings (user_id, route_id, booking_date, journey_date, total_amount, status)
+            VALUES (%s, %s, %s, %s, %s, %s)
+        """, (user_id, route_id, booking_date, journey_date, total_amount, status))
         booking_id = cursor.lastrowid
         logger.info("Created booking ID: %d for user ID: %d", booking_id, user_id)
         return booking_id
@@ -39,7 +39,8 @@ def find_by_id(booking_id):
     """Find a booking by database ID with route and user details."""
     with DatabaseManager() as cursor:
         cursor.execute("""
-            SELECT bk.*, r.origin, r.destination, r.journey_date,
+            SELECT bk.*, COALESCE(bk.journey_date, r.journey_date) AS journey_date,
+                   r.origin, r.destination,
                    r.departure_time, r.arrival_time, r.fare,
                    b.bus_name, b.bus_number, b.bus_type,
                    u.name AS passenger_name, u.email AS passenger_email,
@@ -59,7 +60,8 @@ def find_by_user(user_id):
     """Find all bookings for a user."""
     with DatabaseManager() as cursor:
         cursor.execute("""
-            SELECT bk.*, r.origin, r.destination, r.journey_date,
+            SELECT bk.*, COALESCE(bk.journey_date, r.journey_date) AS journey_date,
+                   r.origin, r.destination,
                    r.departure_time, r.arrival_time, r.fare,
                    b.bus_name, b.bus_number, b.bus_type,
                    op.name AS operator_name
@@ -118,7 +120,8 @@ def get_all_bookings():
     """Get all bookings in system with full details."""
     with DatabaseManager() as cursor:
         cursor.execute("""
-            SELECT bk.*, r.origin, r.destination, r.journey_date,
+            SELECT bk.*, COALESCE(bk.journey_date, r.journey_date) AS journey_date,
+                   r.origin, r.destination,
                    r.departure_time, r.arrival_time, r.fare,
                    b.bus_name, b.bus_number, b.bus_type,
                    u.name AS passenger_name, u.email AS passenger_email,
@@ -152,7 +155,8 @@ def get_bookings_by_operator(operator_id):
     """Get all bookings for an operator's routes."""
     with DatabaseManager() as cursor:
         cursor.execute("""
-            SELECT bk.*, r.origin, r.destination, r.journey_date,
+            SELECT bk.*, COALESCE(bk.journey_date, r.journey_date) AS journey_date,
+                   r.origin, r.destination,
                    r.departure_time, r.fare,
                    b.bus_name, b.bus_number,
                    u.name AS passenger_name, u.email AS passenger_email,

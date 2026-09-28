@@ -89,6 +89,50 @@ class TestBookingFlow:
                 registered_user, seeded_route['route_id'], ["A1"]
             )
 
+    def test_book_ticket_with_custom_journey_date(self, registered_user, seeded_route):
+        """Test booking a ticket with a manually specified custom journey date."""
+        custom_date = "2026-11-20"
+        result = booking_service.book_ticket(
+            registered_user, seeded_route['route_id'], ["B1"], journey_date=custom_date
+        )
+
+        assert result['booking_status'] == "CONFIRMED"
+        assert result['journey_date'] == custom_date
+
+        # Retrieve booking details and verify the journey_date persisted correctly
+        booking_details = booking_service.get_booking_details(result['booking_id'])
+        assert booking_details['journey_date'] == custom_date
+
+    def test_date_specific_seat_availability(self, registered_user, seeded_route):
+        """Test that seats booked on one date remain available for another date."""
+        bus_id = seeded_route['bus_id']
+        route_id = seeded_route['route_id']
+
+        date1 = "2026-09-30"
+        date2 = "2026-09-29"
+
+        # Book seat A1 for date1
+        booking_service.book_ticket(
+            registered_user, route_id, ["A1"], journey_date=date1
+        )
+
+        # On date1, seat A1 should be BOOKED
+        booked_date1 = [s['seat_number'] for s in bus_service.get_booked_seats(bus_id, journey_date=date1)]
+        assert "A1" in booked_date1
+
+        # On date2, seat A1 should be AVAILABLE
+        available_date2 = [s['seat_number'] for s in bus_service.get_available_seats(bus_id, journey_date=date2)]
+        assert "A1" in available_date2
+
+        # Another booking for date2 for seat A1 should succeed
+        res2 = booking_service.book_ticket(
+            registered_user, route_id, ["A1"], journey_date=date2
+        )
+        assert res2['booking_status'] == "CONFIRMED"
+        assert res2['journey_date'] == date2
+
+
+
 
 class TestCancellation:
     """Test group for booking cancellation."""

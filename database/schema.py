@@ -90,6 +90,7 @@ def create_tables():
                     user_id INT NOT NULL,
                     route_id INT NOT NULL,
                     booking_date VARCHAR(15) NOT NULL,
+                    journey_date VARCHAR(15),
                     total_amount DECIMAL(10, 2) NOT NULL,
                     status VARCHAR(20) NOT NULL DEFAULT 'CONFIRMED',
                     FOREIGN KEY (user_id) REFERENCES users(id)
@@ -98,6 +99,11 @@ def create_tables():
                         ON DELETE CASCADE
                 ) ENGINE=InnoDB
             """)
+
+            cursor.execute("SHOW COLUMNS FROM bookings LIKE 'journey_date'")
+            if not cursor.fetchone():
+                cursor.execute("ALTER TABLE bookings ADD COLUMN journey_date VARCHAR(15)")
+
 
             # Booking seats junction table
             cursor.execute("""
