@@ -1,5 +1,5 @@
 # Bus Operator menu module for FastX application console interface.
-
+from exceptions import InvalidJourneyDateError
 from services import auth_service, route_service, bus_service, booking_service
 from utils.helpers import (
     print_header, print_menu, print_field, print_separator,
@@ -112,7 +112,7 @@ def handle_add_route(current_user):
             # Add new bus
             bus_name = input("  Enter bus name       : ").strip()
             bus_number = input("  Enter bus number     : ").strip()
-            bus_type = input("  Enter bus type       : ").strip()
+            bus_type = input("  Enter bus type (Seat/Sleeper AC/Semi-Sleeper/Sleeper Non-AC): ").strip()
 
             try:
                 total_seats = int(input("  Enter total seats    : ").strip())
@@ -146,8 +146,7 @@ def handle_add_route(current_user):
     journey_date = input("  Enter journey date (DD-MM-YYYY): ").strip()
 
     if not validate_future_date(journey_date):
-        print("\n  Invalid or past date.\n")
-        return
+        raise InvalidJourneyDateError("Journey Date should be in Future")
 
     departure_time = input("  Enter departure time (e.g., 08:00 PM): ").strip()
     arrival_time = input("  Enter arrival time (e.g., 11:30 PM): ").strip()
@@ -184,7 +183,7 @@ def handle_view_routes(current_user):
     for i, route in enumerate(routes, 1):
         print_separator()
         print(f"  Route #{i} (ID: {route['id']})")
-        print_separator("-", 40)
+        print_separator("-", 50)
         print_field("  Bus", f"{route['bus_name']} ({route['bus_number']})")
         print_field("  Operator", route.get('operator_name', 'N/A'))
         print_field("  Type", route['bus_type'])

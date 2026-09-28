@@ -311,3 +311,135 @@
 2026-09-27 19:34:52 | decorators.decorators | INFO | Completed: login
 2026-09-27 19:39:48 | decorators.decorators | INFO | Executing: search_routes
 2026-09-27 19:39:48 | decorators.decorators | INFO | Completed: search_routes
+2026-09-27 20:22:17 | __main__ | INFO | Application interrupted by user.
+2026-09-27 20:22:17 | __main__ | INFO | FastX application stopped.
+2026-09-28 09:16:25 | __main__ | INFO | FastX application starting...
+2026-09-28 09:16:25 | database.schema | INFO | Database tables created successfully.
+2026-09-28 09:16:25 | database.seed | INFO | Database already seeded. Skipping.
+2026-09-28 09:16:34 | decorators.decorators | INFO | Executing: login
+2026-09-28 09:16:35 | services.auth_service | INFO | User logged in: admin@fastx.com (Role: ADMIN)
+2026-09-28 09:16:35 | decorators.decorators | INFO | Completed: login
+2026-09-28 09:16:39 | decorators.decorators | INFO | Executing: get_all_users
+2026-09-28 09:16:39 | decorators.decorators | INFO | Completed: get_all_users
+2026-09-28 09:17:01 | decorators.decorators | INFO | Executing: logout
+2026-09-28 09:17:01 | services.auth_service | INFO | User logged out: admin@fastx.com
+2026-09-28 09:17:01 | decorators.decorators | INFO | Completed: logout
+2026-09-28 09:17:03 | __main__ | INFO | FastX application stopped.
+2026-09-28 09:19:43 | __main__ | INFO | FastX application starting...
+2026-09-28 09:19:44 | database.schema | INFO | Database tables created successfully.
+2026-09-28 09:19:44 | database.seed | INFO | Database already seeded. Skipping.
+2026-09-28 09:19:55 | decorators.decorators | INFO | Executing: login
+2026-09-28 09:19:56 | services.auth_service | WARNING | Login failed - email not found: adhiadhi@gmail.com
+2026-09-28 09:19:56 | decorators.decorators | ERROR | Error in login: Invalid email or password.
+2026-09-28 09:20:20 | decorators.decorators | INFO | Executing: login
+2026-09-28 09:20:20 | services.auth_service | INFO | User logged in: admin@fastx.com (Role: ADMIN)
+2026-09-28 09:20:20 | decorators.decorators | INFO | Completed: login
+2026-09-28 09:20:22 | decorators.decorators | INFO | Executing: get_all_users
+2026-09-28 09:20:22 | decorators.decorators | INFO | Completed: get_all_users
+2026-09-28 09:20:40 | decorators.decorators | INFO | Executing: logout
+2026-09-28 09:20:40 | services.auth_service | INFO | User logged out: admin@fastx.com
+2026-09-28 09:20:40 | decorators.decorators | INFO | Completed: logout
+2026-09-28 09:20:51 | decorators.decorators | INFO | Executing: login
+2026-09-28 09:20:51 | services.auth_service | INFO | User logged in: adhiadhi3129@gmail.com (Role: USER)
+2026-09-28 09:20:51 | decorators.decorators | INFO | Completed: login
+2026-09-28 09:21:17 | decorators.decorators | INFO | Executing: book_ticket
+2026-09-28 09:21:17 | repositories.booking_repository | INFO | Created booking ID: 1 for user ID: 6
+2026-09-28 09:21:17 | repositories.booking_repository | INFO | Added 2 seats to booking ID: 1
+2026-09-28 09:21:17 | decorators.decorators | INFO | Executing: process_booking_payment
+2026-09-28 09:21:17 | models.payment | INFO | Transaction logged: TXN-B6472F070D | Amount: Rs. 1300.00 | Status: SUCCESS
+2026-09-28 09:21:17 | repositories.payment_repository | INFO | Created payment: TXN-B6472F070D (ID: 1, Booking: 1)
+2026-09-28 09:21:17 | services.payment_service | INFO | Dummy payment successful: TXN-B6472F070D for booking 1
+2026-09-28 09:21:17 | decorators.decorators | INFO | Completed: process_booking_payment
+2026-09-28 09:21:17 | services.booking_service | INFO | Booking confirmed: FXB10001 - 2 seats - Rs. 1300.00
+2026-09-28 09:21:17 | decorators.decorators | INFO | Completed: book_ticket
+2026-09-28 09:46:07 | decorators.decorators | INFO | Executing: logout
+2026-09-28 09:46:07 | services.auth_service | INFO | User logged out: adhiadhi3129@gmail.com
+2026-09-28 09:46:07 | decorators.decorators | INFO | Completed: logout
+2026-09-28 09:46:23 | decorators.decorators | INFO | Executing: login
+2026-09-28 09:46:23 | services.auth_service | INFO | User logged in: rajesh@fastx.com (Role: BUS_OPERATOR)
+2026-09-28 09:46:23 | decorators.decorators | INFO | Completed: login
+2026-09-28 09:47:21 | decorators.decorators | INFO | Executing: add_bus
+2026-09-28 09:47:21 | repositories.bus_repository | INFO | Created bus: FastX Super (ID: 5, Routine: False)
+2026-09-28 09:47:21 | services.bus_service | INFO | Added bus 'FastX Super' with 40 seats (Routine: False).
+2026-09-28 09:47:21 | decorators.decorators | INFO | Completed: add_bus
+2026-09-28 09:50:29 | decorators.decorators | INFO | Executing: create_route
+2026-09-28 09:50:29 | repositories.route_repository | INFO | Created route: Puducherry → Chennai (ID: 9)
+2026-09-28 09:50:29 | decorators.decorators | INFO | Completed: create_route
+2026-09-28 09:52:16 | decorators.decorators | INFO | Executing: logout
+2026-09-28 09:52:16 | services.auth_service | INFO | User logged out: rajesh@fastx.com
+2026-09-28 09:52:16 | decorators.decorators | INFO | Completed: logout
+2026-09-28 09:52:17 | __main__ | INFO | FastX application stopped.
+2026-09-28 09:52:20 | __main__ | INFO | FastX application starting...
+2026-09-28 09:52:20 | database.schema | INFO | Database tables created successfully.
+2026-09-28 09:52:20 | database.seed | INFO | Database already seeded. Skipping.
+2026-09-28 09:52:34 | decorators.decorators | INFO | Executing: login
+2026-09-28 09:52:34 | services.auth_service | INFO | User logged in: rajesh@fastx.com (Role: BUS_OPERATOR)
+2026-09-28 09:52:34 | decorators.decorators | INFO | Completed: login
+2026-09-28 09:52:39 | decorators.decorators | INFO | Executing: logout
+2026-09-28 09:52:39 | services.auth_service | INFO | User logged out: rajesh@fastx.com
+2026-09-28 09:52:39 | decorators.decorators | INFO | Completed: logout
+2026-09-28 09:53:09 | decorators.decorators | INFO | Executing: register
+2026-09-28 09:53:09 | repositories.user_repository | INFO | Created user: adhitya@fastx.com (ID: 7, Role: BUS_OPERATOR, Active: False)
+2026-09-28 09:53:09 | services.auth_service | INFO | User registered: adhitya@fastx.com (ID: 7, Role: BUS_OPERATOR, Active: False)
+2026-09-28 09:53:09 | decorators.decorators | INFO | Completed: register
+2026-09-28 09:53:31 | decorators.decorators | INFO | Executing: login
+2026-09-28 09:53:31 | services.auth_service | INFO | User logged in: admin@fastx.com (Role: ADMIN)
+2026-09-28 09:53:31 | decorators.decorators | INFO | Completed: login
+2026-09-28 09:53:36 | decorators.decorators | INFO | Executing: get_all_operators
+2026-09-28 09:53:36 | decorators.decorators | INFO | Completed: get_all_operators
+2026-09-28 09:53:48 | decorators.decorators | INFO | Executing: activate_operator
+2026-09-28 09:53:48 | repositories.user_repository | INFO | Updated user ID 7: ['is_active']
+2026-09-28 09:53:48 | services.admin_service | INFO | Admin Admin activated operator ID: 7
+2026-09-28 09:53:48 | decorators.decorators | INFO | Completed: activate_operator
+2026-09-28 09:53:52 | decorators.decorators | INFO | Executing: get_all_operators
+2026-09-28 09:53:52 | decorators.decorators | INFO | Completed: get_all_operators
+2026-09-28 09:53:56 | decorators.decorators | INFO | Executing: deactivate_operator
+2026-09-28 09:53:56 | repositories.user_repository | INFO | Updated user ID 2: ['is_active']
+2026-09-28 09:53:56 | services.admin_service | INFO | Admin Admin deactivated operator ID: 2
+2026-09-28 09:53:56 | decorators.decorators | INFO | Completed: deactivate_operator
+2026-09-28 09:53:59 | decorators.decorators | INFO | Executing: get_all_operators
+2026-09-28 09:53:59 | decorators.decorators | INFO | Completed: get_all_operators
+2026-09-28 09:54:09 | decorators.decorators | INFO | Executing: activate_operator
+2026-09-28 09:54:09 | repositories.user_repository | INFO | Updated user ID 2: ['is_active']
+2026-09-28 09:54:09 | services.admin_service | INFO | Admin Admin activated operator ID: 2
+2026-09-28 09:54:09 | decorators.decorators | INFO | Completed: activate_operator
+2026-09-28 09:54:14 | decorators.decorators | INFO | Executing: get_all_bookings
+2026-09-28 09:54:14 | decorators.decorators | INFO | Completed: get_all_bookings
+2026-09-28 10:34:36 | __main__ | INFO | Application interrupted by user.
+2026-09-28 10:34:36 | __main__ | INFO | FastX application stopped.
+2026-09-28 10:34:41 | __main__ | INFO | FastX application starting...
+2026-09-28 10:34:41 | database.schema | INFO | Database tables created successfully.
+2026-09-28 10:34:41 | database.seed | INFO | Database already seeded. Skipping.
+2026-09-28 10:34:55 | decorators.decorators | INFO | Executing: login
+2026-09-28 10:34:55 | services.auth_service | INFO | User logged in: adhitya@fastx.com (Role: BUS_OPERATOR)
+2026-09-28 10:34:55 | decorators.decorators | INFO | Completed: login
+2026-09-28 10:35:35 | decorators.decorators | INFO | Executing: add_bus
+2026-09-28 10:35:35 | repositories.bus_repository | INFO | Created bus: Adhitya Express (ID: 6, Routine: False)
+2026-09-28 10:35:35 | services.bus_service | INFO | Added bus 'Adhitya Express' with 36 seats (Routine: False).
+2026-09-28 10:35:35 | decorators.decorators | INFO | Completed: add_bus
+2026-09-28 10:36:22 | __main__ | INFO | Application interrupted by user.
+2026-09-28 10:36:22 | __main__ | INFO | FastX application stopped.
+2026-09-28 10:36:24 | __main__ | INFO | FastX application starting...
+2026-09-28 10:36:24 | database.schema | INFO | Database tables created successfully.
+2026-09-28 10:36:24 | database.seed | INFO | Database already seeded. Skipping.
+2026-09-28 10:36:31 | decorators.decorators | INFO | Executing: login
+2026-09-28 10:36:31 | services.auth_service | INFO | User logged in: adhitya@fastx.com (Role: BUS_OPERATOR)
+2026-09-28 10:36:31 | decorators.decorators | INFO | Completed: login
+2026-09-28 10:37:17 | __main__ | INFO | Application interrupted by user.
+2026-09-28 10:37:17 | __main__ | INFO | FastX application stopped.
+2026-09-28 10:37:20 | __main__ | INFO | FastX application starting...
+2026-09-28 10:37:20 | database.schema | INFO | Database tables created successfully.
+2026-09-28 10:37:20 | database.seed | INFO | Database already seeded. Skipping.
+2026-09-28 10:37:27 | decorators.decorators | INFO | Executing: login
+2026-09-28 10:37:27 | services.auth_service | INFO | User logged in: adhitya@fastx.com (Role: BUS_OPERATOR)
+2026-09-28 10:37:27 | decorators.decorators | INFO | Completed: login
+2026-09-28 10:38:07 | decorators.decorators | INFO | Executing: create_route
+2026-09-28 10:38:07 | repositories.route_repository | INFO | Created route: Puducherry → Chennai (ID: 10)
+2026-09-28 10:38:07 | decorators.decorators | INFO | Completed: create_route
+2026-09-28 10:38:44 | decorators.decorators | INFO | Executing: update_route
+2026-09-28 10:38:44 | repositories.route_repository | INFO | Updated route ID 10: ['origin', 'destination', 'journey_date']
+2026-09-28 10:38:44 | decorators.decorators | INFO | Completed: update_route
+2026-09-28 10:38:57 | decorators.decorators | INFO | Executing: logout
+2026-09-28 10:38:57 | services.auth_service | INFO | User logged out: adhitya@fastx.com
+2026-09-28 10:38:57 | decorators.decorators | INFO | Completed: logout
+2026-09-28 10:38:58 | __main__ | INFO | FastX application stopped.

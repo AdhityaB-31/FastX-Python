@@ -33,7 +33,7 @@ end
 # Unset irrelevant variables.
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV '/media/adhitya/My Space/Projects/Project-Sources/FasX-Python/venv'
+set -gx VIRTUAL_ENV '/media/adhitya/My Space/Hexaware Training/Python_Fundamentals/FastX-Python/venv'
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/"bin $PATH
